@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.urls import path, re_path, include
 from rest_framework import routers
-from mybills.api import ExpenseViewSet, IncomeViewSet, TransferViewSet, AccountViewSet, AccountBalanceList
+from mybills.api import (ExpenseViewSet, IncomeViewSet, TransferViewSet,
+                         AccountViewSet, AccountBalanceList, AccountTotalBalance)
 
 router = routers.DefaultRouter()
 
@@ -30,4 +31,9 @@ urlpatterns = [
     path('balance/list/<int:account_id>/', AccountBalanceList.as_view()),
     path('balance/list/<int:account_id>/<int:year>/', AccountBalanceList.as_view()),
     path('balance/list/<int:account_id>/<int:year>/<int:month>/', AccountBalanceList.as_view()),
+
+    # list balance items
+    path('balance/total/<int:account_id>/', AccountTotalBalance.as_view()),
+    path('balance/total/<int:account_id>/<int:year>/', AccountTotalBalance.as_view()),
+    path('balance/total/<int:account_id>/<int:year>/<int:month>/', AccountTotalBalance.as_view()),
 ]
