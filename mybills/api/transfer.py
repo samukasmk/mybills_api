@@ -6,4 +6,4 @@ from mybills.serializers import TransferSerializer
 class TransferViewSet(viewsets.ModelViewSet):
     queryset = Transfer.objects.all()
     serializer_class = TransferSerializer
-    filterset_fields = ['account_id']
+    filterset_fields = ['source_account_id', 'destination_account_id']
