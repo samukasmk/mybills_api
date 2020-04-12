@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import re_path, include
+from django.urls import path, re_path, include
 from rest_framework import routers
-from mybills.api import ExpenseViewSet, IncomeViewSet, TransferViewSet, AccountViewSet
+from mybills.api import ExpenseViewSet, IncomeViewSet, TransferViewSet, AccountViewSet, AccountBalanceList
 
 router = routers.DefaultRouter()
 
@@ -26,4 +26,8 @@ router.register(r'accounts', AccountViewSet)
 
 urlpatterns = [
     re_path('^', include(router.urls)),
+    # list balance items
+    path('balance/list/<int:account_id>/', AccountBalanceList.as_view()),
+    path('balance/list/<int:account_id>/<int:year>/', AccountBalanceList.as_view()),
+    path('balance/list/<int:account_id>/<int:year>/<int:month>/', AccountBalanceList.as_view()),
 ]
