@@ -2,14 +2,15 @@ from django.db import models
 
 
 class Income(models.Model):
-    date = models.DateField(null=False, blank=False)
+    date = models.DateField()
     description = models.CharField(max_length=350, null=True, blank=True)
-    value = models.FloatField(null=False, blank=False)
-    account = models.ForeignKey('Account', null=True, blank=True, on_delete=models.CASCADE)
-    is_payed = models.BooleanField(default=True, null=False, blank=False)
+    value = models.FloatField()
+    account = models.ForeignKey('Account', on_delete=models.CASCADE)
+    is_payed = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
     operation = 'income'
     operation_id = 1
 

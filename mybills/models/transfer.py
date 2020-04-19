@@ -25,17 +25,16 @@ class TransferManager(models.Manager):
 
 
 class Transfer(models.Model):
-    date = models.DateField(null=False, blank=False)
-    source_account = models.OneToOneField('Account', null=True, blank=True,
-                                          on_delete=models.CASCADE, related_name='source_tranfers')
-    destination_account = models.OneToOneField('Account', null=True, blank=True,
-                                               on_delete=models.CASCADE, related_name='destination_tranfers')
-    value = models.FloatField(null=False, blank=False)
+    date = models.DateField()
+    source_account = models.OneToOneField('Account', on_delete=models.CASCADE, related_name='source_tranfers')
+    destination_account = models.OneToOneField('Account', on_delete=models.CASCADE, related_name='destination_tranfers')
+    value = models.FloatField()
     description = models.CharField(max_length=350, null=True, blank=True)
-    is_payed = models.BooleanField(default=True, null=False, blank=False)
+    is_payed = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
     operation = 'tranfer'
     operation_id = 3
 
