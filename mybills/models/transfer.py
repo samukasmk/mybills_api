@@ -25,12 +25,12 @@ class TransferManager(models.Manager):
 
 
 class Transfer(models.Model):
+    date = models.DateField(null=False, blank=False)
     source_account = models.OneToOneField('Account', null=True, blank=True,
                                           on_delete=models.CASCADE, related_name='source_tranfers')
     destination_account = models.OneToOneField('Account', null=True, blank=True,
                                                on_delete=models.CASCADE, related_name='destination_tranfers')
     value = models.FloatField(null=False, blank=False)
-    date = models.DateField(null=False, blank=False)
     description = models.CharField(max_length=350, null=True, blank=True)
     is_payed = models.BooleanField(default=True, null=False, blank=False)
 
@@ -40,6 +40,9 @@ class Transfer(models.Model):
     operation_id = 3
 
     objects = TransferManager()
+
+    class Meta:
+        ordering = ['date']
 
     def __str__(self):
         return (f'{self.date}, {self.value}, {self.description}, '
