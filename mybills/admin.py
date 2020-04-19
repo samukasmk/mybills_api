@@ -9,14 +9,14 @@ class AccountAdmin(admin.ModelAdmin):
 
 @admin.register(Expense)
 class ExpenseAdmin(admin.ModelAdmin):
-    list_display = ('description', 'value', 'date', 'account', 'is_payed')
+    list_display = ('date', 'description', 'value', 'account', 'is_payed')
 
 
 @admin.register(Income)
 class IncomeAdmin(admin.ModelAdmin):
-    list_display = ('description', 'value', 'date', 'account', 'is_payed')
+    list_display = ('date', 'description', 'value', 'account', 'is_payed')
 
 
 @admin.register(Transfer)
 class TransferAdmin(admin.ModelAdmin):
-    list_display = ('description', 'value', 'date', 'source_account', 'destination_account', 'is_payed')
+    list_display = ('date', 'description', 'value', 'source_account', 'destination_account', 'is_payed')
