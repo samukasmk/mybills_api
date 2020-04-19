@@ -3,11 +3,11 @@ from django.db import models
 
 class Account(models.Model):
     class AccountType(models.TextChoices):
-        CHECKING = 'Checking account'
-        SAVING = 'Savings account'
-        WALLET = 'Wallet'
-        INVESTMENTS = 'Financial investments'
-        OTHERS = 'Other'
+        CHECKING = 'checking', 'Checking account'
+        SAVINGS = 'savings', 'Savings account'
+        WALLET = 'wallet', 'Wallet'
+        INVESTMENT = 'investments', 'Financial investments'
+        OTHER = 'other', 'Other'
 
     name = models.CharField(max_length=300, null=False, blank=False)
     account_type = models.CharField(max_length=50, null=False, blank=False,
