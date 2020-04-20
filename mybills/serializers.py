@@ -9,7 +9,7 @@ class AccountSerializer(serializers.ModelSerializer):
         ready_only_fields = ['created_at', 'updated_at']
 
 
-class IncomeSerializer(serializers.HyperlinkedModelSerializer):
+class IncomeSerializer(serializers.ModelSerializer):
     operation = serializers.CharField(read_only=True)
     operation_id = serializers.IntegerField(read_only=True)
 
@@ -19,7 +19,7 @@ class IncomeSerializer(serializers.HyperlinkedModelSerializer):
         ready_only_fields = ['created_at', 'updated_at']
 
 
-class ExpenseSerializer(serializers.HyperlinkedModelSerializer):
+class ExpenseSerializer(serializers.ModelSerializer):
     operation = serializers.CharField(read_only=True)
     operation_id = serializers.IntegerField(read_only=True)
 
@@ -29,7 +29,7 @@ class ExpenseSerializer(serializers.HyperlinkedModelSerializer):
         ready_only_fields = ['created_at', 'updated_at']
 
 
-class TransferSerializer(serializers.HyperlinkedModelSerializer):
+class TransferSerializer(serializers.ModelSerializer):
     operation = serializers.CharField(read_only=True)
     operation_id = serializers.IntegerField(read_only=True)
 
