@@ -1,0 +1,680 @@
+{
+	"info": {
+		"_postman_id": "b1828e39-ca37-4c18-aa43-9c1362901c07",
+		"name": "MyBills",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[accounts] LIST ALL /accounts/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[accounts] CREATE /accounts/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Bank Account\",\n    \"account_type\": \"savings\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mybills_api}}/accounts/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[accounts] LIST /accounts/1/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[accounts] EDIT /accounts/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"My Bank Account\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[accounts] DELETE /accounts/1/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[incomes] LIST ALL /incomes/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{mybills_api}}/incomes/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"incomes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[incomes] CREATE /incomes/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2020-01-01\",\n    \"value\": 1000.50,\n    \"account\": \"1\",\n    \"description\": \"Salary\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mybills_api}}/incomes/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"incomes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[incomes] LIST /incomes/1/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/incomes/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"incomes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[incomes] EDIT /incomes/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2020-01-01\",\n    \"value\": 500.50,\n    \"account\": \"1\",\n    \"description\": \"Salary\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mybills_api}}/incomes/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"incomes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[incomes] DELETE /incomes/1/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/incomes/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"incomes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[expenses] LIST ALL /expenses/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/expenses/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"expenses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[expenses] CREATE /expenses/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2020-01-02\",\n    \"value\": 850.10,\n    \"account\": \"1\",\n    \"description\": \"New smartphone\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mybills_api}}/expenses/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"expenses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[expenses] LIST /expenses/1/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/expenses/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"expenses",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[expenses] EDIT /expenses/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2020-01-03\",\n    \"value\": 950.10,\n    \"account\": \"1\",\n    \"description\": \"New smartphone A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mybills_api}}/expenses/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"expenses",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[expenses] DELETE /expenses/1/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/expenses/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"expenses",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[transfers] LIST ALL /transfers/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/transfers/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"transfers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[transfers] CREATE /transfers/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2020-01-03\",\n    \"value\": 250.10,\n    \"source_account\": \"2\",\n    \"destination_account\": \"1\",\n    \"description\": \"Money savings of month\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mybills_api}}/transfers/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"transfers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[transfers] LIST /transfers/1/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/transfers/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"transfers",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[transfers] EDIT /transfers/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2020-03-04\",\n    \"value\": 350.10,\n    \"source_account\": \"2\",\n    \"destination_account\": \"1\",\n    \"description\": \"Money savings of month\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{mybills_api}}/transfers/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"transfers",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[transfers] DELETE /transfers/1/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/transfers/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"transfers",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[balance items] LIST ALL /accounts/1/balance/items/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/balance/items/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						"balance",
+						"items",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[balance items] LIST FULL YEAR /accounts/1/balance/items/2020/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/balance/items/2020/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						"balance",
+						"items",
+						"2020",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[balance items] LIST YEAR/MONTH /accounts/1/balance/items/2020/1/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/balance/items/2020/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						"balance",
+						"items",
+						"2020",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[balance items] LIST ALL UNTIL END YEAR /accounts/1/balance/items/2020/?since_begin=true",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/balance/items/2020/?since_begin=true",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						"balance",
+						"items",
+						"2020",
+						""
+					],
+					"query": [
+						{
+							"key": "since_begin",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[balance items] LIST ALL UNTIL YEAR/MONTH /accounts/1/balance/items/2020/1/?since_begin=true",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/balance/items/2020/1/?since_begin=true",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						"balance",
+						"items",
+						"2020",
+						"1",
+						""
+					],
+					"query": [
+						{
+							"key": "since_begin",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[balance total] COUNT ALL /accounts/1/balance/total/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/balance/total/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						"balance",
+						"total",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[balance total] COUNT UNTIL FULL YEAR /accounts/1/balance/total/2019/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/balance/total/2019/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						"balance",
+						"total",
+						"2019",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[balance total] COUNT UNTIL YEAR/MONTH /accounts/1/balance/total/2019/1/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mybills_api}}/accounts/1/balance/total/2019/1/",
+					"host": [
+						"{{mybills_api}}"
+					],
+					"path": [
+						"accounts",
+						"1",
+						"balance",
+						"total",
+						"2019",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7134e51d-9f72-468b-b914-5a5473c55b6c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "524a2d44-e3b7-4110-820d-afcdca155915",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "432afc47-b8ae-4158-8290-a1db5ccc8b94",
+			"key": "mybills_api",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
