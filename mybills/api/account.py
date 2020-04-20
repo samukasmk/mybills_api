@@ -1,7 +1,7 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from mybills.models import Account
-from mybills.serializers import AccountSerializer
+from mybills.serializers.models import AccountSerializer
 
 
 class AccountViewSet(viewsets.ModelViewSet):

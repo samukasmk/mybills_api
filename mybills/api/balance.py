@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from mybills.serializers import serializer_by_operation
+from mybills.serializers.balance_items import serializer_by_operation
 from mybills.logic import account_balance_items, account_total_balance
 
 

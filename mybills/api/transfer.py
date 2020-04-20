@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from mybills.models import Transfer
-from mybills.serializers import TransferSerializer
+from mybills.serializers.models import TransferSerializer
 
 
 class TransferViewSet(viewsets.ModelViewSet):
