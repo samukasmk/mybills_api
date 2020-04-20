@@ -5,7 +5,7 @@ from mybills.serializers.balance_items import serializer_by_operation
 from mybills.logic import account_balance_items, account_total_balance
 
 
-class AccountBalanceList(APIView):
+class AccountBalanceItems(APIView):
     def get(self, request, account_id, year=None, month=None):
         since_begin = request.GET.get('since_begin', '').lower() == 'true'
 
@@ -18,7 +18,7 @@ class AccountBalanceList(APIView):
         return Response(balance_items, status=status.HTTP_200_OK)
 
 
-class AccountTotalBalance(APIView):
+class AccountBalanceTotal(APIView):
     def get(self, request, account_id, year=None, month=None):
         total_balance_in_period = account_total_balance(account_id, year=year, month=month)
         return Response({'total': total_balance_in_period}, status=status.HTTP_200_OK)

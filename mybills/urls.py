@@ -16,7 +16,7 @@ Including another URLconf
 from django.urls import path, re_path, include
 from rest_framework import routers
 from mybills.api import (ExpenseViewSet, IncomeViewSet, TransferViewSet,
-                         AccountViewSet, AccountBalanceList, AccountTotalBalance)
+                         AccountViewSet, AccountBalanceItems, AccountBalanceTotal)
 
 router = routers.DefaultRouter()
 
@@ -28,12 +28,12 @@ router.register(r'accounts', AccountViewSet)
 urlpatterns = [
     re_path('^', include(router.urls)),
     # list balance items
-    path('balance/list/<int:account_id>/', AccountBalanceList.as_view()),
-    path('balance/list/<int:account_id>/<int:year>/', AccountBalanceList.as_view()),
-    path('balance/list/<int:account_id>/<int:year>/<int:month>/', AccountBalanceList.as_view()),
+    path('accounts/<int:account_id>/balance/items/', AccountBalanceItems.as_view()),
+    path('accounts/<int:account_id>/balance/items/<int:year>/', AccountBalanceItems.as_view()),
+    path('accounts/<int:account_id>/balance/items/<int:year>/<int:month>/', AccountBalanceItems.as_view()),
 
     # list balance items
-    path('balance/total/<int:account_id>/', AccountTotalBalance.as_view()),
-    path('balance/total/<int:account_id>/<int:year>/', AccountTotalBalance.as_view()),
-    path('balance/total/<int:account_id>/<int:year>/<int:month>/', AccountTotalBalance.as_view()),
+    path('accounts/<int:account_id>/balance/total/', AccountBalanceTotal.as_view()),
+    path('accounts/<int:account_id>/balance/total/<int:year>/', AccountBalanceTotal.as_view()),
+    path('accounts/<int:account_id>/balance/total/<int:year>/<int:month>/', AccountBalanceTotal.as_view()),
 ]
