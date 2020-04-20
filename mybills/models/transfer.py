@@ -29,7 +29,7 @@ class Transfer(models.Model):
     source_account = models.OneToOneField('Account', on_delete=models.CASCADE, related_name='source_tranfers')
     destination_account = models.OneToOneField('Account', on_delete=models.CASCADE, related_name='destination_tranfers')
     value = models.FloatField()
-    description = models.CharField(max_length=350, null=True, blank=True)
+    description = models.CharField(max_length=350, default='')
     is_payed = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)

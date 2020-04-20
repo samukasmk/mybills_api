@@ -11,7 +11,7 @@ class Account(models.Model):
 
     name = models.CharField(max_length=300)
     account_type = models.CharField(max_length=50, default=AccountType.CHECKING, choices=AccountType.choices)
-    description = models.CharField(max_length=350, null=True, blank=True)
+    description = models.CharField(max_length=350, default='')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

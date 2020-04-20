@@ -3,7 +3,7 @@ from django.db import models
 
 class Expense(models.Model):
     date = models.DateField()
-    description = models.CharField(max_length=350, null=True, blank=True)
+    description = models.CharField(max_length=350, default='')
     value = models.FloatField()
     account = models.ForeignKey('Account', on_delete=models.CASCADE)
     is_payed = models.BooleanField(default=True)
